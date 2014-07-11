@@ -22,7 +22,7 @@ names(x)<-xvar$V2
 # Subset the activity data to only include mean() and std() columns
 x <- subset(x, select=grep("-mean\\(\\)|-std\\(\\)", names(x)))
 
-# Clean up the variable names
+# Clean up the variable names by removing hyphens, parentheses, and changing to CamelCase.
 names <- gsub("-", "", names(x))
 names <- gsub("mean", "Mean", names)
 names <- gsub("std", "Std", names)
